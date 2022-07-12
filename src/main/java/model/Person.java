@@ -1,6 +1,18 @@
+package model;
+
+import org.springframework.boot.autoconfigure.web.ResourceProperties;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "people")
 public class Person {
+    @Column(name = "fName")
     String firstName;
+    @Column(name = "lName")
     String lastName;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     String idNumber;
 
     public String getFirstName() {
